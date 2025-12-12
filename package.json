@@ -1,0 +1,21 @@
+{
+  "name": "kinori-frontend",
+  "version": "0.1.0",
+  "description": "**Kinori** — privacy-first веб-приложение для построения и управления генеалогическими деревьями, хранения семейного архива (фото/документы) и совместной работы через **ограниченный просмотр по ссылке**, **запрос доступа**, **модерацию** и **предложения правок** (suggestions)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khimish009/kinori-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Khimish009/kinori-frontend/issues"
+  },
+  "homepage": "https://github.com/Khimish009/kinori-frontend#readme"
+}
