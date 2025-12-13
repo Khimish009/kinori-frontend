@@ -2,10 +2,10 @@
   "name": "kinori-frontend",
   "version": "0.1.0",
   "description": "**Kinori** — privacy-first веб-приложение для построения и управления генеалогическими деревьями, хранения семейного архива (фото/документы) и совместной работы через **ограниченный просмотр по ссылке**, **запрос доступа**, **модерацию** и **предложения правок** (suggestions)",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "dev": "webpack --mode development",
+    "build": "webpack",
+    "dev": "webpack",
     "watch": "webpack --mode development --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,12 +16,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Khimish009/kinori-frontend/issues"
   },
   "homepage": "https://github.com/Khimish009/kinori-frontend#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^5.6.5",
     "webpack": "^5.103.0",
     "webpack-cli": "^6.0.1"
   }
