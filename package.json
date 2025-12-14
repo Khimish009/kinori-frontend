@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "**Kinori** — privacy-first веб-приложение для построения и управления генеалогическими деревьями, хранения семейного архива (фото/документы) и совместной работы через **ограниченный просмотр по ссылке**, **запрос доступа**, **модерацию** и **предложения правок** (suggestions)",
   "scripts": {
+    "start": "webpack serve",
     "build": "webpack",
     "dev": "webpack",
     "watch": "webpack --mode development --watch",
@@ -22,11 +23,13 @@
   "devDependencies": {
     "@types/node": "^25.0.1",
     "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.7.2",
     "html-webpack-plugin": "^5.6.5",
     "ts-loader": "^9.5.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "webpack": "^5.103.0",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   }
 }
