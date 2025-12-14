@@ -1,6 +1,8 @@
 import { type RuleSetRule } from "webpack"
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import type { BuildOptions } from "./types/config";
 
-export function buildLoaders(): RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     const tsLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -10,7 +12,7 @@ export function buildLoaders(): RuleSetRule[] {
     const cssLoader = {
         test: /\.css$/i,
         use: [
-            "style-loader",
+            options.isDev ? "style-loader" : MiniCssExtractPlugin.loader,
             "css-loader",
             "postcss-loader"
         ]
