@@ -9,9 +9,9 @@ export default (env: BuildEnv) => {
         html: path.resolve(__dirname, 'public', 'index.html')
     }
 
-    const mode = env.mode || "development"
+    const mode = env?.mode || "development"
     const isDev = mode === "development"
-    const PORT = env.port || 3000
+    const PORT = env?.port || 3000
 
     return buildWebpackConfig({
         mode,

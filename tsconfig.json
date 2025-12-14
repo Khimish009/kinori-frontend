@@ -1,14 +1,21 @@
 {
     "compilerOptions": {
-        "outDir": "./dist/",
         "noImplicitAny": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
         "module": "ESNext",
-        "target": "es5",
+        "target": "es2020",
         "jsx": "react-jsx",
         "allowJs": true,
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true
     },
     "ts-node": {
         "compilerOptions": {
