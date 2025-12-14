@@ -6,7 +6,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 
 ---
 
-## [0.2.0] - 2025-12-15
+## [0.2.0] - 2025-12-14
 
 ### Added
 - Webpack build system with TypeScript support
@@ -17,6 +17,18 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 - Environment-based configuration (mode, port)
 - Content hash for cache busting: `bundle.[contenthash].js`
 - NPM scripts: `start`, `build:dev`, `build:prod`, `watch`
+- React and ReactDOM dependencies
+- Base React application with App component
+- Tailwind CSS integration with PostCSS pipeline
+- PostCSS configuration in TypeScript
+- CSS extraction for production builds using MiniCssExtractPlugin
+- HTML template with basic structure
+
+### Changed
+- Migrate PostCSS config from JavaScript to TypeScript
+
+### Removed
+- Unused Tailwind config file
 
 ---
 
