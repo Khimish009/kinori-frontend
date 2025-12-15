@@ -9,7 +9,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 ## [0.3.0] - 2025-12-15
 
 ### Added
-- **Routing system:** React Router v7.10.1 with client-side navigation
+- **Routing system:** React Router DOM v7.10.1 with client-side navigation
 - **Code splitting:** Lazy-loaded pages with React.lazy and Suspense
 - **Feature-Sliced Design (FSD) architecture:**
   - `app/` layer: App component, providers (router), layouts (MainLayout)
