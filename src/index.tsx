@@ -1,8 +1,7 @@
-import { StrictMode, Suspense } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router";
+import { App } from "app/App";
 import "./index.css"
-import { RoutesConfig } from "./routes";
 
 const container = document.getElementById("root");
 
@@ -14,10 +13,6 @@ const root = createRoot(container)
 
 root.render(
     <StrictMode>
-        <BrowserRouter>
-            <Suspense fallback={<div>Loading...</div>}>
-                <RoutesConfig />
-            </Suspense>
-        </BrowserRouter>
+        <App />
     </StrictMode>
 )

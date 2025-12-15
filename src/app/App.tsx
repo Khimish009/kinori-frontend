@@ -1,13 +1,10 @@
-import { Link, Outlet } from "react-router";
+import { BrowserRouter } from "react-router";
+import { AppRouter } from "./providers/router";
 
 export const App = () => {
     return (
-        <div>
-            <div>
-                <Link to="/main">Main page</Link>
-                <Link to="/about">About page</Link>
-            </div>
-            <Outlet />
-        </div>
+        <BrowserRouter>
+            <AppRouter />
+        </BrowserRouter>
     )
 }
