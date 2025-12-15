@@ -6,6 +6,37 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 
 ---
 
+## [0.3.0] - 2025-12-15
+
+### Added
+- **Routing system:** React Router v7.10.1 with client-side navigation
+- **Code splitting:** Lazy-loaded pages with React.lazy and Suspense
+- **Feature-Sliced Design (FSD) architecture:**
+  - `app/` layer: App component, providers (router), layouts (MainLayout)
+  - `pages/` layer: MainPage, AboutPage, NotFoundPage with async loading
+  - `shared/` layer: LoadingFallback UI component
+- **Absolute imports:** TypeScript paths aliases for FSD layers (app/*, pages/*, widgets/*, features/*, entities/*, shared/*)
+- **Webpack configuration:**
+  - Named chunks with `[name].[contenthash].js` for better debugging
+  - Chunk naming via webpackChunkName comments
+  - Absolute module resolution with preferAbsolute
+- **Components:**
+  - MainLayout with navigation between pages
+  - NotFound page for 404 errors
+  - LoadingFallback component for Suspense boundaries
+- **Dev server:** historyApiFallback support for SPA routing
+
+### Changed
+- Migrate from monolithic app structure to Feature-Sliced Design
+- Split App component into modular structure with providers and layouts
+- Update webpack output config with named chunks
+- Configure module resolution to support FSD absolute imports
+
+### Removed
+- Old monolithic `src/app.tsx` (replaced with `src/app/App.tsx`)
+
+---
+
 ## [0.2.0] - 2025-12-14
 
 ### Added
