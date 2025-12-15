@@ -6,3 +6,4 @@ export const RoutePath: Record<AppRoutes, string> = {
 }
 
 export const NOT_FOUND_ROUTE = '*'
+export const ROOT_PATH = '/'

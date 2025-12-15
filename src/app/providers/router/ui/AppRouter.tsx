@@ -3,13 +3,14 @@ import { Suspense } from "react"
 import { Route, Routes } from "react-router"
 import { routeConfig } from "../config/routeConfig"
 import { NotFound } from "pages/not-found-page"
-import { NOT_FOUND_ROUTE } from "../config/consts"
+import { NOT_FOUND_ROUTE, ROOT_PATH } from "../config/consts"
+import { LoadingFallback } from "shared/ui/loading-fallback"
 
 export const AppRouter = () => {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<LoadingFallback />}>
             <Routes>
-                <Route path="/" element={<MainLayout />}>
+                <Route path={ROOT_PATH} element={<MainLayout />}>
                     {Object.values(routeConfig).map((route) => (<Route key={route.path} {...route} />))}
 
                     <Route path={NOT_FOUND_ROUTE} element={<NotFound />} />
