@@ -1,6 +1,6 @@
 import { AboutPage } from "pages/about-page";
 import { MainPage } from "pages/main-page";
-import type { RouteProps } from "react-router";
+import type { RouteProps } from "react-router-dom";
 import { AppRoutes } from "./types";
 import { RoutePath } from "./consts";
 

@@ -1,6 +1,6 @@
 import { MainLayout } from "app/layouts/main-layout"
 import { Suspense } from "react"
-import { Route, Routes } from "react-router"
+import { Route, Routes } from "react-router-dom"
 import { routeConfig } from "../config/routeConfig"
 import { NotFound } from "pages/not-found-page"
 import { NOT_FOUND_ROUTE, ROOT_PATH } from "../config/consts"

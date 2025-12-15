@@ -1,6 +1,6 @@
 import { RoutePath } from "app/providers/router/config/consts"
 import { AppRoutes } from "app/providers/router/config/types"
-import { Link, Outlet } from "react-router"
+import { Link, Outlet } from "react-router-dom"
 
 export const MainLayout = () => {
     return (
