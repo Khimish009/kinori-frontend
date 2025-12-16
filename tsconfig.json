@@ -31,6 +31,9 @@
             ],
             "shared/*": [
                 "./src/shared/*"
+            ],
+            "@/*": [
+                "./src/*"
             ]
         },
         "allowSyntheticDefaultImports": true,
