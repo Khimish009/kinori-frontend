@@ -6,6 +6,38 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 
 ---
 
+## [0.4.0] - 2025-12-17
+
+### Added
+- **Dark mode support:** Theme switching functionality with light/dark modes
+- **Theme system:**
+  - ThemeProvider with context-based state management
+  - Theme persistence using localStorage
+  - Automatic system preference detection (prefers-color-scheme)
+  - CSS variables for theme customization
+- **shadcn/ui integration:**
+  - Button component from shadcn/ui
+  - shadcn/ui configuration (components.json)
+  - Tailwind CSS custom properties for theme colors
+- **ThemeSwitcher feature:**
+  - Interactive theme toggle button in MainLayout
+  - Dynamic Sun/Moon icons from lucide-react
+  - Accessibility labels and proper ARIA attributes
+- **Dependencies:**
+  - @radix-ui/react-slot for component composition
+  - class-variance-authority for variant styling
+  - clsx and tailwind-merge for className utilities
+  - lucide-react for icon components
+  - tw-animate-css for animations
+
+### Changed
+- Rename `config/consts.ts` to `config/constants.ts` for consistency
+- Move `src/lib/utils.ts` and `src/components/ui/button.tsx` to shared layer
+- Add `@` path alias in webpack and TypeScript configs for cleaner imports
+- Wrap App component with ThemeProvider
+
+---
+
 ## [0.3.0] - 2025-12-15
 
 ### Added
