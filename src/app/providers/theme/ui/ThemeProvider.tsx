@@ -1,6 +1,5 @@
 import { ThemeContext } from "../model/ThemeContext"
-import type { ThemeProviderProps } from "../model/types"
-import type { Theme } from "../model/types"
+import type { ThemeProviderProps, Theme } from "../model/types"
 import { useCallback, useLayoutEffect, useMemo, useState } from "react"
 import { applyTheme, getInitialTheme, getOppositeTheme } from "../lib/utils"
 import { DEFAULT_THEME, LOCAL_STORAGE_THEME_KEY } from "../config/constants"
