@@ -6,28 +6,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 
 ---
 
-## [0.5.0] - 2025-12-17
+## [Unreleased]
 
 ### Added
+
+#### Theme System
+- **Dark mode support:** Theme switching functionality with light/dark modes
 - **Cross-tab theme synchronization:** Theme changes now sync automatically across all open browser tabs
   - Storage event listener in ThemeProvider for real-time synchronization
   - Theme validation using exported isValidTheme utility function
   - Seamless user experience when switching themes in multiple tabs
-
-### Changed
-- Export `isValidTheme` function from theme utils for cross-tab validation
-
----
-
-## [0.4.0] - 2025-12-17
-
-### Added
-- **Dark mode support:** Theme switching functionality with light/dark modes
-- **Theme system:**
-  - ThemeProvider with context-based state management
+- **ThemeProvider:**
+  - Context-based state management
   - Theme persistence using localStorage
   - Automatic system preference detection (prefers-color-scheme)
   - CSS variables for theme customization
+
+#### UI Components & Design System
 - **shadcn/ui integration:**
   - Button component from shadcn/ui
   - shadcn/ui configuration (components.json)
@@ -36,18 +31,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Interactive theme toggle button in MainLayout
   - Dynamic Sun/Moon icons from lucide-react
   - Accessibility labels and proper ARIA attributes
-- **Dependencies:**
-  - @radix-ui/react-slot for component composition
-  - class-variance-authority for variant styling
-  - clsx and tailwind-merge for className utilities
-  - lucide-react for icon components
-  - tw-animate-css for animations
+
+#### Dependencies
+- @radix-ui/react-slot for component composition
+- class-variance-authority for variant styling
+- clsx and tailwind-merge for className utilities
+- lucide-react for icon components
+- tw-animate-css for animations
 
 ### Changed
 - Rename `config/consts.ts` to `config/constants.ts` for consistency
 - Move `src/lib/utils.ts` and `src/components/ui/button.tsx` to shared layer
 - Add `@` path alias in webpack and TypeScript configs for cleaner imports
 - Wrap App component with ThemeProvider
+- Export `isValidTheme` function from theme utils for cross-tab validation
 
 ---
 
