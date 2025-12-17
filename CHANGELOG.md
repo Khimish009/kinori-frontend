@@ -6,6 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 
 ---
 
+## [0.5.0] - 2025-12-17
+
+### Added
+- **Cross-tab theme synchronization:** Theme changes now sync automatically across all open browser tabs
+  - Storage event listener in ThemeProvider for real-time synchronization
+  - Theme validation using exported isValidTheme utility function
+  - Seamless user experience when switching themes in multiple tabs
+
+### Changed
+- Export `isValidTheme` function from theme utils for cross-tab validation
+
+---
+
 ## [0.4.0] - 2025-12-17
 
 ### Added
