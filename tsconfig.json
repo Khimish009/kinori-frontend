@@ -31,7 +31,7 @@
             ],
             "shared/*": [
                 "./src/shared/*"
-            ],
+            ]
         },
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,

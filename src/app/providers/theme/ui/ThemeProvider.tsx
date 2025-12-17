@@ -22,7 +22,7 @@ export const ThemeProvider = ({ children, defaultTheme = DEFAULT_THEME }: ThemeP
     const value = useMemo(() => ({
         theme,
         toggleTheme
-    }), [theme])
+    }), [theme, toggleTheme])
 
     return (
         <ThemeContext.Provider value={value}>

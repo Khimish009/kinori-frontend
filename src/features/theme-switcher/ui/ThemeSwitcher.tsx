@@ -1,12 +1,17 @@
 import { useTheme } from "app/providers/theme"
 import { Sun, Moon } from 'lucide-react'
+import { useMemo } from "react";
 import { Button } from "shared/ui/button";
 
 export const ThemeSwitcher = () => {
     const { theme, toggleTheme } = useTheme();
 
-    const Icon = theme === "dark" ? Sun : Moon
-    const themeSwitchLabel = `Switch to ${theme === 'light' ? 'dark' : 'light'} mode`
+    const isDark = theme === "dark"
+    const Icon = useMemo(() => isDark ? Sun : Moon, [isDark])
+    const themeSwitchLabel = useMemo(
+        () => `Switch to ${isDark ? 'light' : 'dark'} mode`,
+        [theme]
+    )
 
     return (
         <Button
