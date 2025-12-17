@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button"
 import { useTheme } from "app/providers/theme"
 import { Sun, Moon } from 'lucide-react'
+import { Button } from "shared/ui/button";
 
 export const ThemeSwitcher = () => {
     const { theme, toggleTheme } = useTheme();
