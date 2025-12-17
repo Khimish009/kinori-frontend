@@ -1,7 +1,7 @@
 import { LOCAL_STORAGE_THEME_KEY } from "../config/constants"
 import type { Theme } from "../model/types"
 
-const isValidTheme = (value: unknown): value is Theme => {
+export const isValidTheme = (value: unknown): value is Theme => {
     return value === "light" || value === "dark"
 }
 
