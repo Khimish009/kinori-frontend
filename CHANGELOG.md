@@ -31,6 +31,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Interactive theme toggle button in MainLayout
   - Dynamic Sun/Moon icons from lucide-react
   - Accessibility labels and proper ARIA attributes
+- **Logo component:**
+  - Reusable Logo component with Network icon from lucide-react
+  - Responsive design: icon always visible, text hidden on mobile (md:inline)
+  - Hover effect with opacity transition
+  - Integrated into Navbar with accessibility attributes
 
 #### Dependencies
 - @radix-ui/react-slot for component composition

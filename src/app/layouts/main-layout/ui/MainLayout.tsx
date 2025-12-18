@@ -1,17 +1,17 @@
-import { RoutePath } from "app/providers/router/config/constants"
-import { AppRoutes } from "app/providers/router/config/types"
-import { ThemeSwitcher } from "features/theme-switcher"
-import { Link, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
+import { Suspense } from "react"
+import { LoadingFallback } from "shared/ui/loading-fallback"
+import { Navbar } from "widgets/navbar"
 
 export const MainLayout = () => {
     return (
-        <div>
-            <div className="mt-2 flex gap-2">
-                <Link to={RoutePath[AppRoutes.MAIN]}>Main page</Link>
-                <Link to={RoutePath[AppRoutes.ABOUT]}>About page</Link>
-                <ThemeSwitcher />
-            </div>
-            <Outlet />
+        <div className="p-4">
+            <Navbar />
+            <main>
+                <Suspense fallback={<LoadingFallback />}>
+                    <Outlet />
+                </Suspense>
+            </main>
         </div>
     )
 }
