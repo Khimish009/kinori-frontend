@@ -1,4 +1,4 @@
-import { LoginButton } from "features/auth"
+import { SignInButton, SignUpButton } from "features/auth"
 import { ThemeSwitcher } from "features/theme-switcher"
 import { Link, NavLink } from "react-router-dom"
 import { navLinks } from "../config/navLinks"
@@ -30,7 +30,8 @@ export const Navbar = () => {
             </nav>
             <div className="flex gap-2 mr-4">
                 <ThemeSwitcher />
-                <LoginButton />
+                <SignInButton />
+                <SignUpButton />
             </div>
         </header>
     )
