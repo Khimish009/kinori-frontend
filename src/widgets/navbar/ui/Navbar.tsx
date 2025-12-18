@@ -12,19 +12,26 @@ export const Navbar = () => {
         }`
 
     return (
-        <nav className="flex justify-between sticky top-0 z-50 bg-background">
+        <header className="flex justify-between items-center sticky top-0 z-50 bg-background">
             <div className="ml-4">
-                <Link to={ROOT_PATH}>Logo</Link>
+                <Link to={ROOT_PATH}>Kinori</Link>
             </div>
-            <div className="flex gap-3">
+            <nav className="flex gap-3" aria-label="Main navigation">
                 {navLinks.map(({ to, title }) => (
-                    <NavLink key={to} className={linkClasses} to={to}>{title}</NavLink>
+                    <NavLink
+                        key={to}
+                        className={linkClasses}
+                        to={to}
+                        title={title}
+                    >
+                        {title}
+                    </NavLink>
                 ))}
-            </div>
+            </nav>
             <div className="flex gap-2 mr-4">
                 <ThemeSwitcher />
                 <LoginButton />
             </div>
-        </nav>
+        </header>
     )
 }
