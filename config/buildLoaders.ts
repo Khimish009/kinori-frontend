@@ -18,8 +18,14 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
         ]
     }
 
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    }
+
     return [
         tsLoader,
-        cssLoader
+        cssLoader,
+        svgLoader
     ]
 }

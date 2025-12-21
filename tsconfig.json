@@ -40,16 +40,17 @@
     },
     "include": [
         "src/**/*",
-        "config/**/*"
+        "config/**/*",
+        "global.d.ts"
     ],
     "exclude": [
         "node_modules",
         "build",
-        "dist"
+        "dist",
     ],
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
-    }
+    },
 }
