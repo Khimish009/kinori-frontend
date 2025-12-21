@@ -32,10 +32,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Dynamic Sun/Moon icons from lucide-react
   - Accessibility labels and proper ARIA attributes
 - **Logo component:**
-  - Reusable Logo component with Network icon from lucide-react
+  - Reusable Logo component with custom SVG logo
   - Responsive design: icon always visible, text hidden on mobile (md:inline)
   - Hover effect with opacity transition
   - Integrated into Navbar with accessibility attributes
+- **Favicon:**
+  - SVG favicon with automatic dark mode support (adapts to system color scheme)
+  - PNG fallbacks for browsers without SVG support (16x16, 32x32)
+  - Proper meta tags in HTML template
+
+#### Build Configuration
+- **SVG asset handling:**
+  - @svgr/webpack loader for importing SVG files as React components
+  - TypeScript declarations for SVG imports (global.d.ts)
+  - Webpack configuration for seamless SVG-to-component transformation
 
 #### Dependencies
 - @radix-ui/react-slot for component composition
