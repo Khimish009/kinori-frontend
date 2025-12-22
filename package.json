@@ -13,8 +13,8 @@
     "url": "git+https://github.com/Khimish009/kinori-frontend.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Salman Khimishev <salman.khimishev01@gmail.com>",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/Khimish009/kinori-frontend/issues"
   },
