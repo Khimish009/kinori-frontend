@@ -8,3 +8,7 @@ declare module "*.svg" {
   const ReactComponent: FC<SVGProps<SVGSVGElement>> & { title?: string };
   export default ReactComponent;
 }
+
+declare module "*.png";
+declare module "*.jpeg";
+declare module "*.jpg";

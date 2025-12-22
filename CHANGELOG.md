@@ -50,6 +50,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Proper meta tags in HTML template
 
 #### Build Configuration
+- **Image and font asset handling:**
+  - Webpack asset/resource loader for images (png, jpg, jpeg, gif) and fonts (woff, woff2)
+  - Automatic optimization with 10KB threshold for inline data URLs
+  - Asset output directory configuration: `images/[name][hash][ext][query]`
+  - TypeScript declarations for image imports (global.d.ts)
 - **SVG asset handling:**
   - @svgr/webpack loader for importing SVG files as React components
   - TypeScript declarations for SVG imports (global.d.ts)
