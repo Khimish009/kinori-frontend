@@ -4,15 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Современные браузеры используют SVG -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-    <!-- Fallback для старых браузеров -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <title>Kinori - Family Tree & Archive</title>
     <meta name="description" content="Privacy-first family tree and archive management">
+
+    <meta property="og:title" content="Kinori — privacy-first family tree" />
+    <meta property="og:description"
+        content="Private-by-default генеалогические деревья и семейный архив. Ограниченный просмотр по ссылке + запрос доступа + suggestions." />
+    <meta property="og:image" content="/og.png" /> <!-- TODO: CHANGE OT -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.example" /> <!-- TODO: CHANGE OT -->
+    <meta name="twitter:card" content="summary_large_image" /> <!-- TODO: CHANGE OT -->
+
+    <!-- Modern browsers use SVG -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Fallback for legacy browsers -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 </head>
 
 <body>

@@ -1,14 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <style>
     g { stroke: #1F2937; }
-
     circle { stroke: #101828; }
     
     @media (prefers-color-scheme: dark) {
       g { stroke: #F3F4F6; }
-      circle { stroke: #f3f4f6; }
+      circle { stroke: #F3F4F6; }
+    }
+    
+    @media (prefers-contrast: high) {
+      g { stroke: #000; }
+      circle { stroke: #000; }
+    }
+    
+    @media (prefers-color-scheme: dark) and (prefers-contrast: high) {
+      g { stroke: #FFF; }
+      circle { stroke: #FFF; }
+    }
+
+    @media (forced-colors: active) {
+      path, circle { stroke: CanvasText; }
     }
   </style>
+
   <g stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
     <path d="M20 23v4c0 4 4 7 8 7h8c4 0 8-3 8-7v-4"/>
     <path d="M32 37v8"/>
