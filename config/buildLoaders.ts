@@ -46,9 +46,22 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
         ],
     }
 
+    const fileLoader: RuleSetRule = {
+        test: /\.(png|jpg|jpeg|gif|woff2|woff)$/i,
+        type: 'asset/resource',
+        parser: {
+            dataUrlCondition: {
+                maxSize: 10 * 1024
+            }
+        }
+    }
+
+
+
     return [
         tsLoader,
         cssLoader,
-        svgLoader
+        svgLoader,
+        fileLoader
     ]
 }
