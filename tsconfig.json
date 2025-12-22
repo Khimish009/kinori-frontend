@@ -40,7 +40,8 @@
     },
     "include": [
         "src/**/*",
-        "config/**/*"
+        "config/**/*",
+        "global.d.ts"
     ],
     "exclude": [
         "node_modules",
@@ -51,5 +52,5 @@
         "compilerOptions": {
             "module": "CommonJS"
         }
-    }
+    },
 }
