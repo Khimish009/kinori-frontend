@@ -1,5 +1,6 @@
 {
     "loading": "Laden...",
     "error": "Fehler",
-    "save": "Speichern"
+    "save": "Speichern",
+    "not_found_page": "Seite nicht gefunden"
 }

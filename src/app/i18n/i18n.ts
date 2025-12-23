@@ -13,6 +13,7 @@ i18n
         debug: true,
         ns: ['common'],
         defaultNS: 'common',
+        partialBundledLanguages: true,
         supportedLngs: ['ru', 'en', 'de', 'es', 'fr', 'it'],
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json'

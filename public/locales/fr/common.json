@@ -1,5 +1,6 @@
 {
     "loading": "Chargement...",
     "error": "Erreur",
-    "save": "Enregistrer"
+    "save": "Enregistrer",
+    "not_found_page": "Page non trouvée"
 }
