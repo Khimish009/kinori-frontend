@@ -6,7 +6,9 @@
     "start": "webpack serve --env port=3001",
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
-    "favicon:generate": "npx sharp -i public/favicon.svg -o public/favicon-32x32.png resize 32 32 && npx sharp -i public/favicon.svg -o public/favicon-16x16.png resize 16 16 && npx sharp -i public/favicon.svg -o public/apple-touch-icon.png resize 180 180"
+    "favicon:generate": "npx sharp -i public/favicon.svg -o public/favicon-32x32.png resize 32 32 && npx sharp -i public/favicon.svg -o public/favicon-16x16.png resize 16 16 && npx sharp -i public/favicon.svg -o public/apple-touch-icon.png resize 180 180",
+    "i18n:check": "i18next",
+    "i18n:extract": "i18next --config i18next-parser.config.ts"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "i18next": "^25.7.3",
     "i18next-browser-languagedetector": "^8.2.0",
     "i18next-http-backend": "^3.0.2",
+    "i18next-parser": "^9.3.0",
     "mini-css-extract-plugin": "^2.9.4",
     "postcss": "^8.5.6",
     "postcss-loader": "^8.2.0",

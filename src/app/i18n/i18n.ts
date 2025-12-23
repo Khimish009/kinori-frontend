@@ -9,9 +9,9 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        fallbackLng: 'ru',
+        fallbackLng: false,
         debug: true,
-        ns: ['mainPage', 'aboutPage','common'],
+        ns: ['common'],
         defaultNS: 'common',
         supportedLngs: ['ru', 'en', 'de', 'es', 'fr', 'it'],
         backend: {
