@@ -10,6 +10,24 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 
 ### Added
 
+#### Internationalization (i18n)
+- **Multi-language support:**
+  - i18next integration with support for 6 languages (English, Russian, Spanish, French, Chinese, Japanese)
+  - i18next-browser-languagedetector for automatic language detection
+  - i18next-http-backend for loading translation files
+  - TypeScript types for translation keys and i18n configuration
+  - Translation namespaces support (common, 404)
+  - Default value placeholders for missing translations
+- **Language switcher component:**
+  - LangSwitcher component integrated into Navbar
+  - Flag icons for all supported languages
+  - Dropdown UI with button wrapper and proper spacing
+  - Real-time language switching with i18next
+- **Development tools:**
+  - i18next-parser for extracting translation keys
+  - NPM scripts for managing translations (extract, validation)
+  - TypeScript configuration for translation file parsing
+
 #### Project Documentation
 - **Apache 2.0 License:**
   - LICENSE file with full Apache License 2.0 text
@@ -61,6 +79,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Webpack configuration for seamless SVG-to-component transformation
 
 #### Dependencies
+- i18next for internationalization core functionality
+- react-i18next for React integration
+- i18next-browser-languagedetector for automatic language detection
+- i18next-http-backend for loading translation files
+- i18next-parser for extracting translation keys (dev dependency)
 - @radix-ui/react-slot for component composition
 - class-variance-authority for variant styling
 - clsx and tailwind-merge for className utilities
@@ -68,11 +91,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 - tw-animate-css for animations
 
 ### Changed
+- **i18n configuration restructure:** Reorganized i18n setup with improved TypeScript types and modular structure
+- **Language switcher UI improvements:** Enhanced spacing and button wrapper for better visual appearance
 - Rename `config/consts.ts` to `config/constants.ts` for consistency
 - Move `src/lib/utils.ts` and `src/components/ui/button.tsx` to shared layer
 - Add `@` path alias in webpack and TypeScript configs for cleaner imports
 - Wrap App component with ThemeProvider
 - Export `isValidTheme` function from theme utils for cross-tab validation
+
+### Fixed
+- **Utils alias path:** Corrected utils path alias in components.json configuration
 
 ---
 
