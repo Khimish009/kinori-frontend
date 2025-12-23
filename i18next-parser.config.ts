@@ -3,6 +3,10 @@ export default {
     output: 'public/locales/$LOCALE/$NAMESPACE.json',
     input: ['src/**/*.{js,jsx,ts,tsx}'],
 
+    defaultValue: function (key: string) {
+        return `TODO: translate '${key}'`;
+    },
+
     createOldCatalogs: false,
     failOnWarnings: false,
     failOnUpdate: false,
