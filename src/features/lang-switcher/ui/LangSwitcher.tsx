@@ -2,6 +2,7 @@ import { Globe, Check } from 'lucide-react'
 import { languages } from "../config/languages"
 import { useTranslation } from "react-i18next"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from 'shared/ui/dropdown-menu';
+import { Button } from 'shared/ui/button';
 
 export const LangSwitcher = () => {
     const { i18n } = useTranslation();
@@ -9,12 +10,12 @@ export const LangSwitcher = () => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger>
-                <Globe />
+                <Button variant="ghost"><Globe /></Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 {languages.map(({ title, locale, icon }) => (
                     <DropdownMenuItem
-                        className="flex gap-1 items-center"
+                        className="flex gap-2 items-center"
                         onClick={() => {
                             i18n.changeLanguage(locale)
                         }}
@@ -22,7 +23,7 @@ export const LangSwitcher = () => {
                     >
                         <span>{icon}</span>
                         <span>{title}</span>
-                        <span>{i18n.language === locale && <Check width={16} />}</span>
+                        <span>{i18n.language === locale && <Check width={18} />}</span>
                     </DropdownMenuItem>
                 ))}
             </DropdownMenuContent>
