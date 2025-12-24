@@ -12,21 +12,25 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 
 #### Internationalization (i18n)
 - **Multi-language support:**
-  - i18next integration with support for 6 languages (English, Russian, Spanish, French, Chinese, Japanese)
+  - i18next integration with support for 6 languages (English, Russian, Spanish, French, German, Italian)
   - i18next-browser-languagedetector for automatic language detection
   - i18next-http-backend for loading translation files
   - TypeScript types for translation keys and i18n configuration
   - Translation namespaces support (common, 404)
-  - Default value placeholders for missing translations
+  - React Suspense integration for async translation loading
+  - Error handling with fallback for i18n initialization failures
+  - Environment-aware debug mode (enabled only in development)
 - **Language switcher component:**
   - LangSwitcher component integrated into Navbar
   - Flag icons for all supported languages
   - Dropdown UI with button wrapper and proper spacing
   - Real-time language switching with i18next
+  - Performance optimization with useCallback hook
 - **Development tools:**
   - i18next-parser for extracting translation keys
   - NPM scripts for managing translations (extract, validation)
   - TypeScript configuration for translation file parsing
+  - Environment-aware default values (dev: TODO markers, prod: key fallback)
 
 #### Project Documentation
 - **Apache 2.0 License:**
@@ -62,6 +66,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Responsive design: icon always visible, text hidden on mobile (md:inline)
   - Hover effect with opacity transition
   - Integrated into Navbar with accessibility attributes
+- **AppLoader component:**
+  - Loading fallback component for React Suspense
+  - Used for async i18n translation loading
+  - Integrated into App root component
 - **Favicon:**
   - SVG favicon with automatic dark mode support (adapts to system color scheme)
   - PNG fallbacks for browsers without SVG support (16x16, 32x32)
@@ -77,6 +85,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - @svgr/webpack loader for importing SVG files as React components
   - TypeScript declarations for SVG imports (global.d.ts)
   - Webpack configuration for seamless SVG-to-component transformation
+- **Locale files handling:**
+  - CopyWebpackPlugin integration for copying locale files to build directory
+  - DefinePlugin for NODE_ENV environment variable injection
+  - Automated locale files deployment in production builds
 
 #### Dependencies
 - i18next for internationalization core functionality
@@ -84,6 +96,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 - i18next-browser-languagedetector for automatic language detection
 - i18next-http-backend for loading translation files
 - i18next-parser for extracting translation keys (dev dependency)
+- copy-webpack-plugin for copying static assets (locale files) to build
 - @radix-ui/react-slot for component composition
 - class-variance-authority for variant styling
 - clsx and tailwind-merge for className utilities

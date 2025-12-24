@@ -10,7 +10,7 @@ i18n
     .use(initReactI18next)
     .init({
         fallbackLng: false,
-        debug: true,
+        debug: process.env.NODE_ENV === 'development',
         ns: ['common'],
         defaultNS: 'common',
         partialBundledLanguages: true,
@@ -18,10 +18,17 @@ i18n
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json'
         },
+        react: {
+            useSuspense: true,
+        },
 
         interpolation: {
             escapeValue: false,
         }
+    })
+    .catch((error) => {
+        console.error('Failed to initialize i18n:', error);
+        // Можно добавить отправку в систему мониторинга (Sentry, etc.)
     });
 
 

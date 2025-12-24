@@ -28,5 +28,5 @@ export const languages = [
         title: 'Italiano',
         locale: 'it',
         icon: '🇮🇹'
-    }
+    },
 ]

@@ -4,7 +4,11 @@ export default {
     input: ['src/**/*.{js,jsx,ts,tsx}'],
 
     defaultValue: function (key: string) {
-        return `TODO: translate '${key}'`;
+        if (process.env.NODE_ENV === 'development') {
+            return `TODO: translate '${key}'`;
+        }
+
+        return key;
     },
 
     createOldCatalogs: false,
