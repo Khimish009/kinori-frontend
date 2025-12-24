@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import type { BuildOptions } from './types/config';
 
 export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
@@ -21,15 +22,23 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
                 }
             ]
         })
+    ];
 
-    ]
-
-    if (!options.isDev) {
-        plugins.push(new MiniCssExtractPlugin({
-            filename: "css/[name].[contenthash:8].css",
-            chunkFilename: "css/[name].[contenthash:8].chunk.css",
-        }))
+    if (options.isDev) {
+        plugins.push(
+            new ReactRefreshWebpackPlugin(),
+            new webpack.HotModuleReplacementPlugin()
+        )
     }
 
-    return plugins
+    if (!options.isDev) {
+        plugins.push(
+            new MiniCssExtractPlugin({
+                filename: "css/[name].[contenthash:8].css",
+                chunkFilename: "css/[name].[contenthash:8].chunk.css",
+            }),
+        )
+    }
+
+    return plugins.filter(Boolean)
 }

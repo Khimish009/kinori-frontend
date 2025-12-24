@@ -10,6 +10,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 
 ### Added
 
+#### Development Experience (DX)
+- **React Fast Refresh (HMR):**
+  - @pmmmwh/react-refresh-webpack-plugin for React Fast Refresh support
+  - react-refresh runtime for component state preservation
+  - HotModuleReplacementPlugin for development mode
+  - Instant component updates without losing state during development
+  - Explicit hot: true in webpack-dev-server configuration
+  - Improved developer experience with faster feedback loop
+
 #### Internationalization (i18n)
 - **Multi-language support:**
   - i18next integration with support for 6 languages (English, Russian, Spanish, French, German, Italian)
@@ -98,6 +107,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Webpack DefinePlugin configuration for `__DEV__` injection
 
 #### Dependencies
+- @pmmmwh/react-refresh-webpack-plugin for React Fast Refresh (dev dependency)
+- react-refresh for React Fast Refresh runtime (dev dependency)
 - i18next for internationalization core functionality
 - react-i18next for React integration
 - i18next-browser-languagedetector for automatic language detection

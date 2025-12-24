@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Khimish009/kinori-frontend#readme",
   "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.6.2",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^25.0.1",
@@ -41,6 +42,7 @@
     "postcss": "^8.5.6",
     "postcss-loader": "^8.2.0",
     "react-i18next": "^16.5.0",
+    "react-refresh": "^0.18.0",
     "sharp-cli": "^5.2.0",
     "style-loader": "^4.0.0",
     "tailwindcss": "^4.1.18",
