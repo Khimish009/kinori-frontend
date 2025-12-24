@@ -10,7 +10,7 @@ i18n
     .use(initReactI18next)
     .init({
         fallbackLng: false,
-        debug: process.env.NODE_ENV === 'development',
+        debug: __DEV__,
         ns: ['common'],
         defaultNS: 'common',
         supportedLngs: ['ru', 'en', 'de', 'es', 'fr', 'it'],

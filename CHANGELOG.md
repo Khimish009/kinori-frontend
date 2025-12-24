@@ -92,6 +92,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - CopyWebpackPlugin integration for copying locale files to build directory
   - DefinePlugin for NODE_ENV environment variable injection
   - Automated locale files deployment in production builds
+- **Global variables:**
+  - `__DEV__` global boolean variable for development mode detection
+  - TypeScript declaration for `__DEV__` in global.d.ts
+  - Webpack DefinePlugin configuration for `__DEV__` injection
 
 #### Dependencies
 - i18next for internationalization core functionality
@@ -108,6 +112,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 - tw-animate-css for animations
 
 ### Changed
+- **i18n architecture refactor:**
+  - Move i18n configuration from `app/i18n/` to `app/providers/i18n/` following FSD architecture
+  - Replace `process.env.NODE_ENV` checks with `__DEV__` global variable
+  - Update import paths across the application
 - **i18n configuration restructure:** Reorganized i18n setup with improved TypeScript types and modular structure
 - **Language switcher UI improvements:** Enhanced spacing and button wrapper for better visual appearance
 - **Language switcher implementation:**

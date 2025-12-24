@@ -11,7 +11,7 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
         }),
         new webpack.ProgressPlugin(),
         new webpack.DefinePlugin({
-            "process.env.NODE_ENV": JSON.stringify(options.mode)
+            "__DEV__": JSON.stringify(options.isDev)
         }),
         new CopyWebpackPlugin({
             patterns: [
