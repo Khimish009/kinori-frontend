@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom"
 import { navLinks } from "../config/navLinks"
 import { ROOT_PATH } from "app/providers/router/config/constants"
 import { Logo } from "shared/ui/logo"
+import { LangSwitcher } from "features/lang-switcher"
 
 export const Navbar = () => {
     const linkClasses = ({ isActive }: { isActive: boolean }) =>
@@ -29,6 +30,7 @@ export const Navbar = () => {
             </nav>
             <div className="flex gap-2">
                 <ThemeSwitcher />
+                <LangSwitcher />
                 <SignInButton />
                 <SignUpButton />
             </div>
