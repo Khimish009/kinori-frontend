@@ -14,19 +14,19 @@ export const LangSwitcher = () => {
 
     return (
         <DropdownMenu>
-            <DropdownMenuTrigger>
-                <Button variant="ghost"><Globe /></Button>
+            <DropdownMenuTrigger asChild>
+                <Button variant="ghost" aria-label="Change language"><Globe /></Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 {languages.map(({ title, locale, Icon }) => (
                     <DropdownMenuItem
                         className="flex gap-2 items-center"
-                        onClick={() => handleLanguageChange(locale)}
+                        onSelect={() => handleLanguageChange(locale)}
                         key={locale}
                     >
                         <Icon className="w-5 h-4" aria-hidden="true" />
                         {title}
-                        {i18n.language === locale && <Check width={18} />}
+                        {i18n.resolvedLanguage === locale && <Check width={18} />}
                     </DropdownMenuItem>
                 ))}
             </DropdownMenuContent>

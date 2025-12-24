@@ -13,7 +13,6 @@ i18n
         debug: process.env.NODE_ENV === 'development',
         ns: ['common'],
         defaultNS: 'common',
-        partialBundledLanguages: true,
         supportedLngs: ['ru', 'en', 'de', 'es', 'fr', 'it'],
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json'
@@ -31,5 +30,14 @@ i18n
         // Можно добавить отправку в систему мониторинга (Sentry, etc.)
     });
 
+// Синхронизация HTML lang атрибута с текущим языком i18n
+i18n.on('languageChanged', (lng) => {
+    document.documentElement.setAttribute('lang', lng);
+});
+
+// Установка начального значения lang
+if (i18n.language) {
+    document.documentElement.setAttribute('lang', i18n.language);
+}
 
 export default i18n;

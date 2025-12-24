@@ -20,6 +20,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - React Suspense integration for async translation loading
   - Error handling with fallback for i18n initialization failures
   - Environment-aware debug mode (enabled only in development)
+  - Automatic HTML lang attribute synchronization with current language
 - **Language switcher component:**
   - LangSwitcher component integrated into Navbar
   - SVG flag icons from country-flag-icons library (replacing emoji flags)
@@ -27,6 +28,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Dropdown UI with button wrapper and proper spacing
   - Real-time language switching with i18next
   - Performance optimization with useCallback hook
+  - Accessibility improvements with ARIA labels for screen readers
 - **Development tools:**
   - i18next-parser for extracting translation keys
   - NPM scripts for managing translations (extract, validation)
@@ -108,6 +110,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 ### Changed
 - **i18n configuration restructure:** Reorganized i18n setup with improved TypeScript types and modular structure
 - **Language switcher UI improvements:** Enhanced spacing and button wrapper for better visual appearance
+- **Language switcher implementation:**
+  - Use resolvedLanguage instead of language for more reliable active language detection
+  - Proper Radix UI DropdownMenu API usage (onSelect instead of onClick, asChild prop)
+- **i18n configuration optimization:** Removed unused partialBundledLanguages option
 - Rename `config/consts.ts` to `config/constants.ts` for consistency
 - Move `src/lib/utils.ts` and `src/components/ui/button.tsx` to shared layer
 - Add `@` path alias in webpack and TypeScript configs for cleaner imports
