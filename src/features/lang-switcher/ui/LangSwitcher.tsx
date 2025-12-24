@@ -18,14 +18,14 @@ export const LangSwitcher = () => {
                 <Button variant="ghost"><Globe /></Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-                {languages.map(({ title, locale, icon }) => (
+                {languages.map(({ title, locale, Icon }) => (
                     <DropdownMenuItem
                         className="flex gap-2 items-center"
                         onClick={() => handleLanguageChange(locale)}
                         key={locale}
                     >
-                        <span>{icon}</span>
-                        <span>{title}</span>
+                        <Icon className="w-5 h-4" aria-hidden="true" />
+                        {title}
                         {i18n.language === locale && <Check width={18} />}
                     </DropdownMenuItem>
                 ))}

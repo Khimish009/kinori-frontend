@@ -22,7 +22,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Environment-aware debug mode (enabled only in development)
 - **Language switcher component:**
   - LangSwitcher component integrated into Navbar
-  - Flag icons for all supported languages
+  - SVG flag icons from country-flag-icons library (replacing emoji flags)
+  - High-quality 3x2 ratio flag components with proper sizing
   - Dropdown UI with button wrapper and proper spacing
   - Real-time language switching with i18next
   - Performance optimization with useCallback hook
@@ -97,6 +98,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 - i18next-http-backend for loading translation files
 - i18next-parser for extracting translation keys (dev dependency)
 - copy-webpack-plugin for copying static assets (locale files) to build
+- country-flag-icons for SVG country flag components
 - @radix-ui/react-slot for component composition
 - class-variance-authority for variant styling
 - clsx and tailwind-merge for className utilities
