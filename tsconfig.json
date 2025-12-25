@@ -1,56 +1,36 @@
 {
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "target": "es2020",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "app/*": ["./src/app/*"],
+      "pages/*": ["./src/pages/*"],
+      "widgets/*": ["./src/widgets/*"],
+      "features/*": ["./src/features/*"],
+      "entities/*": ["./src/entities/*"],
+      "shared/*": ["./src/shared/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": ["src/**/*", "config/**/*", "global.d.ts"],
+  "exclude": ["node_modules", "build", "dist"],
+  "ts-node": {
     "compilerOptions": {
-        "noImplicitAny": true,
-        "strict": true,
-        "strictNullChecks": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true,
-        "module": "ESNext",
-        "target": "es2020",
-        "jsx": "react-jsx",
-        "allowJs": true,
-        "moduleResolution": "bundler",
-        "baseUrl": ".",
-        "paths": {
-            "app/*": [
-                "./src/app/*"
-            ],
-            "pages/*": [
-                "./src/pages/*"
-            ],
-            "widgets/*": [
-                "./src/widgets/*"
-            ],
-            "features/*": [
-                "./src/features/*"
-            ],
-            "entities/*": [
-                "./src/entities/*"
-            ],
-            "shared/*": [
-                "./src/shared/*"
-            ]
-        },
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-    },
-    "include": [
-        "src/**/*",
-        "config/**/*",
-        "global.d.ts"
-    ],
-    "exclude": [
-        "node_modules",
-        "build",
-        "dist"
-    ],
-    "ts-node": {
-        "compilerOptions": {
-            "module": "CommonJS"
-        }
-    },
+      "module": "CommonJS"
+    }
+  }
 }

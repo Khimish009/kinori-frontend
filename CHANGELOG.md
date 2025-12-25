@@ -11,6 +11,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 ### Added
 
 #### Development Experience (DX)
+
 - **React Fast Refresh (HMR):**
   - @pmmmwh/react-refresh-webpack-plugin for React Fast Refresh support
   - react-refresh runtime for component state preservation
@@ -19,7 +20,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Explicit hot: true in webpack-dev-server configuration
   - Improved developer experience with faster feedback loop
 
+- **ESLint and Prettier configuration:**
+  - ESLint flat config with TypeScript support
+  - eslint-plugin-react-hooks for React Hooks rules validation
+  - eslint-plugin-jsx-a11y for accessibility linting
+  - eslint-config-prettier for ESLint/Prettier integration
+  - Prettier configuration with best practices (trailing commas, arrow parens, LF line endings)
+  - .prettierignore file for excluding build artifacts and dependencies
+  - NPM scripts for code quality: prettier:check, prettier:write, format
+  - Automatic React version detection in ESLint
+  - Comprehensive linting for TypeScript, React, and accessibility
+
 #### Internationalization (i18n)
+
 - **Multi-language support:**
   - i18next integration with support for 6 languages (English, Russian, Spanish, French, German, Italian)
   - i18next-browser-languagedetector for automatic language detection
@@ -45,6 +58,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Environment-aware default values (dev: TODO markers, prod: key fallback)
 
 #### Project Documentation
+
 - **Apache 2.0 License:**
   - LICENSE file with full Apache License 2.0 text
   - NOTICE file for copyright attribution
@@ -53,6 +67,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Patent protection and enterprise-ready legal framework for future commercialization
 
 #### Theme System
+
 - **Dark mode support:** Theme switching functionality with light/dark modes
 - **Cross-tab theme synchronization:** Theme changes now sync automatically across all open browser tabs
   - Storage event listener in ThemeProvider for real-time synchronization
@@ -65,6 +80,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - CSS variables for theme customization
 
 #### UI Components & Design System
+
 - **shadcn/ui integration:**
   - Button component from shadcn/ui
   - shadcn/ui configuration (components.json)
@@ -88,6 +104,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Proper meta tags in HTML template
 
 #### Build Configuration
+
 - **Image and font asset handling:**
   - Webpack asset/resource loader for images (png, jpg, jpeg, gif) and fonts (woff, woff2)
   - Automatic optimization with 10KB threshold for inline data URLs
@@ -107,8 +124,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Webpack DefinePlugin configuration for `__DEV__` injection
 
 #### Dependencies
+
 - @pmmmwh/react-refresh-webpack-plugin for React Fast Refresh (dev dependency)
 - react-refresh for React Fast Refresh runtime (dev dependency)
+- eslint-config-prettier for disabling ESLint rules that conflict with Prettier (dev dependency)
+- eslint-plugin-react-hooks for React Hooks linting rules (dev dependency)
+- eslint-plugin-jsx-a11y for accessibility linting rules (dev dependency)
 - i18next for internationalization core functionality
 - react-i18next for React integration
 - i18next-browser-languagedetector for automatic language detection
@@ -123,6 +144,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 - tw-animate-css for animations
 
 ### Changed
+
 - **i18n architecture refactor:**
   - Move i18n configuration from `app/i18n/` to `app/providers/i18n/` following FSD architecture
   - Replace `process.env.NODE_ENV` checks with `__DEV__` global variable
@@ -140,6 +162,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 - Export `isValidTheme` function from theme utils for cross-tab validation
 
 ### Fixed
+
 - **Utils alias path:** Corrected utils path alias in components.json configuration
 
 ---
@@ -147,13 +170,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 ## [0.3.0] - 2025-12-15
 
 ### Added
+
 - **Routing system:** React Router DOM v7.10.1 with client-side navigation
 - **Code splitting:** Lazy-loaded pages with React.lazy and Suspense
 - **Feature-Sliced Design (FSD) architecture:**
   - `app/` layer: App component, providers (router), layouts (MainLayout)
   - `pages/` layer: MainPage, AboutPage, NotFoundPage with async loading
   - `shared/` layer: LoadingFallback UI component
-- **Absolute imports:** TypeScript paths aliases for FSD layers (app/*, pages/*, widgets/*, features/*, entities/*, shared/*)
+- **Absolute imports:** TypeScript paths aliases for FSD layers (app/_, pages/_, widgets/_, features/_, entities/_, shared/_)
 - **Webpack configuration:**
   - Named chunks with `[name].[contenthash].js` for better debugging
   - Chunk naming via webpackChunkName comments
@@ -165,12 +189,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 - **Dev server:** historyApiFallback support for SPA routing
 
 ### Changed
+
 - Migrate from monolithic app structure to Feature-Sliced Design
 - Split App component into modular structure with providers and layouts
 - Update webpack output config with named chunks
 - Configure module resolution to support FSD absolute imports
 
 ### Removed
+
 - Old monolithic `src/app.tsx` (replaced with `src/app/App.tsx`)
 
 ---
@@ -178,6 +204,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 ## [0.2.0] - 2025-12-14
 
 ### Added
+
 - Webpack build system with TypeScript support
 - Modular config structure: `buildLoaders`, `buildPlugins`, `buildResolvers`, `buildWebpackConfig`, `buildDevServer`
 - TypeScript configuration (`tsconfig.json`)
@@ -194,9 +221,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 - HTML template with basic structure
 
 ### Changed
+
 - Migrate PostCSS config from JavaScript to TypeScript
 
 ### Removed
+
 - Unused Tailwind config file
 
 ---
@@ -204,6 +233,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 ## [0.1.0] - 2025-12-14
 
 ### Added
+
 - Initial project setup
 - Package.json and repository configuration
 
@@ -214,11 +244,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 **Categories:** `Added` | `Changed` | `Deprecated` | `Removed` | `Fixed` | `Security`
 
 **Versioning:** MAJOR.MINOR.PATCH
+
 - **MAJOR** - Breaking changes
 - **MINOR** - New features (backwards-compatible)
 - **PATCH** - Bug fixes (backwards-compatible)
 
 **Style:**
+
 - Use imperative mood ("Add feature" not "Added feature")
 - Be specific and concise
 - Link issues/PRs when relevant: `(#123)` or `(fixes #456)`
