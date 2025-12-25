@@ -1,5 +1,3 @@
 export const AppLoader = () => {
-    return (
-        <div>Loading...</div>
-    )
-}
+  return <div>Loading...</div>;
+};

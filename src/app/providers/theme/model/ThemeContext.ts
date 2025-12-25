@@ -1,4 +1,6 @@
-import { createContext } from "react";
-import type { ThemeProviderState } from "./types";
+import { createContext } from 'react';
+import type { ThemeProviderState } from './types';
 
-export const ThemeContext = createContext<ThemeProviderState | undefined>(undefined)
+export const ThemeContext = createContext<ThemeProviderState | undefined>(
+  undefined,
+);

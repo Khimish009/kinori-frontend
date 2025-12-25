@@ -1,17 +1,19 @@
-import { MainLayout } from "app/layouts/main-layout"
-import { Route, Routes } from "react-router-dom"
-import { routeConfig } from "../config/routeConfig"
-import { NotFound } from "pages/not-found-page"
-import { NOT_FOUND_ROUTE, ROOT_PATH } from "../config/constants"
+import { MainLayout } from 'app/layouts/main-layout';
+import { Route, Routes } from 'react-router-dom';
+import { routeConfig } from '../config/routeConfig';
+import { NotFound } from 'pages/not-found-page';
+import { NOT_FOUND_ROUTE, ROOT_PATH } from '../config/constants';
 
 export const AppRouter = () => {
-    return (
-        <Routes>
-            <Route path={ROOT_PATH} element={<MainLayout />}>
-                {Object.values(routeConfig).map((route) => (<Route key={route.path} {...route} />))}
+  return (
+    <Routes>
+      <Route path={ROOT_PATH} element={<MainLayout />}>
+        {Object.values(routeConfig).map((route) => (
+          <Route key={route.path} {...route} />
+        ))}
 
-                <Route path={NOT_FOUND_ROUTE} element={<NotFound />} />
-            </Route>
-        </Routes>
-    )
-}
+        <Route path={NOT_FOUND_ROUTE} element={<NotFound />} />
+      </Route>
+    </Routes>
+  );
+};
