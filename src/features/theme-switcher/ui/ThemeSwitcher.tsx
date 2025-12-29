@@ -1,27 +1,23 @@
-import { useTheme } from "app/providers/theme"
-import { Sun, Moon } from 'lucide-react'
-import { useMemo } from "react";
-import { Button } from "shared/ui/button";
+import { useTheme } from 'app/providers/theme';
+import { Moon, Sun } from 'lucide-react';
+import { Button } from 'shared/ui/button';
 
 export const ThemeSwitcher = () => {
-    const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
-    const isDark = theme === "dark"
-    const Icon = useMemo(() => isDark ? Sun : Moon, [isDark])
-    const themeSwitchLabel = useMemo(
-        () => `Switch to ${isDark ? 'light' : 'dark'} mode`,
-        [theme]
-    )
+  const isDark = theme === 'dark';
+  const Icon = isDark ? Sun : Moon;
+  const themeSwitchLabel = `Switch to ${isDark ? 'light' : 'dark'} mode`;
 
-    return (
-        <Button
-            aria-label={themeSwitchLabel}
-            title={themeSwitchLabel}
-            onClick={toggleTheme}
-            variant="ghost"
-            size="icon"
-        >
-            <Icon className="h-5 w-5 transition-opacity duration-200" />
-        </Button>
-    )
-}
+  return (
+    <Button
+      aria-label={themeSwitchLabel}
+      title={themeSwitchLabel}
+      onClick={toggleTheme}
+      variant="ghost"
+      size="icon"
+    >
+      <Icon className="h-5 w-5 transition-opacity duration-200" />
+    </Button>
+  );
+};

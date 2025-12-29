@@ -1,2 +1,2 @@
-export { SignInButton } from "./ui/SignInButton"
-export { SignUpButton } from "./ui/SignUpButton"
+export { SignInButton } from './ui/SignInButton';
+export { SignUpButton } from './ui/SignUpButton';

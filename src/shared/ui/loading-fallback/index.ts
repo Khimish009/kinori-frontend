@@ -1,1 +1,1 @@
-export { LoadingFallback } from "./ui/LoadingFallback"
+export { LoadingFallback } from './ui/LoadingFallback';

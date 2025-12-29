@@ -1,7 +1,5 @@
-import { Button } from "shared/ui/button"
+import { Button } from 'shared/ui/button';
 
 export const SignInButton = () => {
-    return (
-        <Button>Sign in</Button>
-    )
-}
+  return <Button>Sign in</Button>;
+};

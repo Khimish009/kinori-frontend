@@ -1,44 +1,47 @@
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import webpack from 'webpack';
+
 import type { BuildOptions } from './types/config';
 
-export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
-    const plugins = [
-        new HtmlWebpackPlugin({
-            template: options.paths.html
-        }),
-        new webpack.ProgressPlugin(),
-        new webpack.DefinePlugin({
-            "__DEV__": JSON.stringify(options.isDev)
-        }),
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: options.paths.locales,
-                    to: 'locales'
-                }
-            ]
-        })
-    ];
+export function buildPlugins(
+  options: BuildOptions,
+): webpack.WebpackPluginInstance[] {
+  const plugins = [
+    new HtmlWebpackPlugin({
+      template: options.paths.html,
+    }),
+    new webpack.ProgressPlugin(),
+    new webpack.DefinePlugin({
+      __DEV__: JSON.stringify(options.isDev),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: options.paths.locales,
+          to: 'locales',
+        },
+      ],
+    }),
+  ];
 
-    if (options.isDev) {
-        plugins.push(
-            new ReactRefreshWebpackPlugin(),
-            new webpack.HotModuleReplacementPlugin()
-        )
-    }
+  if (options.isDev) {
+    plugins.push(
+      new ReactRefreshWebpackPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
+    );
+  }
 
-    if (!options.isDev) {
-        plugins.push(
-            new MiniCssExtractPlugin({
-                filename: "css/[name].[contenthash:8].css",
-                chunkFilename: "css/[name].[contenthash:8].chunk.css",
-            }),
-        )
-    }
+  if (!options.isDev) {
+    plugins.push(
+      new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].chunk.css',
+      }),
+    );
+  }
 
-    return plugins.filter(Boolean)
+  return plugins.filter(Boolean);
 }

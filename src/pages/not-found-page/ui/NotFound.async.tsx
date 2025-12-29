@@ -1,3 +1,3 @@
-import { lazy } from "react";
+import { lazy } from 'react';
 
-export const NotFoundAsync = lazy(() => import('./NotFound'))
+export const NotFoundAsync = lazy(() => import('./NotFound'));

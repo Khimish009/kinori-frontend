@@ -1,0 +1,36 @@
+# Dependencies
+node_modules
+
+# Build outputs
+build
+dist
+.webpack
+coverage
+
+# Cache and logs
+*.log
+.DS_Store
+.cache
+.turbo
+
+# Generated files
+*.min.js
+*.min.css
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build tool configs (often auto-generated)
+.next
+.nuxt
+.vuepress/dist
+
+# Public files (may contain minified code)
+public/locales/**/*.json
+
+# TypeScript declaration files (may be generated)
+*.d.ts
+!global.d.ts
+
+# SVG files (formatting may break icons)
+*.svg

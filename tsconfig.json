@@ -1,56 +1,51 @@
 {
+  "compilerOptions": {
+    // === Type strictness ===
+    "strict": true, // Enables all strict type-checking options
+    "noUncheckedIndexedAccess": true, // Array/object access returns Type | undefined
+    "noUnusedLocals": true, // Report errors on unused local variables
+    "noUnusedParameters": true, // Report errors on unused parameters
+
+    // === Module system ===
+    "module": "ESNext", // Use modern ES modules
+    "target": "ES2022", // Target ECMAScript version
+    "lib": ["ES2022", "DOM", "DOM.Iterable"], // Explicitly specify available APIs
+    "moduleResolution": "bundler", // Optimized for Webpack/Vite
+    "verbatimModuleSyntax": true, // Strict checking for type-only imports (TS 5.0+)
+
+    // === React ===
+    "jsx": "react-jsx", // New JSX transform (React 17+)
+
+    // === Paths and modules ===
+    "baseUrl": ".",
+    "paths": {
+      "app/*": ["./src/app/*"],
+      "pages/*": ["./src/pages/*"],
+      "widgets/*": ["./src/widgets/*"],
+      "features/*": ["./src/features/*"],
+      "entities/*": ["./src/entities/*"],
+      "shared/*": ["./src/shared/*"]
+    },
+    "resolveJsonModule": true, // Allow importing JSON files
+
+    // === Compatibility ===
+    "esModuleInterop": true, // CommonJS/ES modules interop (includes allowSyntheticDefaultImports)
+    "forceConsistentCasingInFileNames": true, // Enforce consistent file name casing
+    "isolatedModules": true, // Each file as a separate module (required for Babel/SWC)
+
+    // === Performance ===
+    "skipLibCheck": true, // Skip type checking of .d.ts files from node_modules
+    "incremental": true, // Enable incremental compilation with caching
+    "tsBuildInfoFile": "./.tsbuildinfo", // Build info file location
+
+    // === Development ===
+    "sourceMap": true // Generate source maps for debugging
+  },
+  "include": ["src/**/*", "config/**/*", "global.d.ts"],
+  "exclude": ["node_modules", "build", "dist", ".tsbuildinfo"],
+  "ts-node": {
     "compilerOptions": {
-        "noImplicitAny": true,
-        "strict": true,
-        "strictNullChecks": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true,
-        "module": "ESNext",
-        "target": "es2020",
-        "jsx": "react-jsx",
-        "allowJs": true,
-        "moduleResolution": "bundler",
-        "baseUrl": ".",
-        "paths": {
-            "app/*": [
-                "./src/app/*"
-            ],
-            "pages/*": [
-                "./src/pages/*"
-            ],
-            "widgets/*": [
-                "./src/widgets/*"
-            ],
-            "features/*": [
-                "./src/features/*"
-            ],
-            "entities/*": [
-                "./src/entities/*"
-            ],
-            "shared/*": [
-                "./src/shared/*"
-            ]
-        },
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-    },
-    "include": [
-        "src/**/*",
-        "config/**/*",
-        "global.d.ts"
-    ],
-    "exclude": [
-        "node_modules",
-        "build",
-        "dist"
-    ],
-    "ts-node": {
-        "compilerOptions": {
-            "module": "CommonJS"
-        }
-    },
+      "module": "CommonJS"
+    }
+  }
 }
