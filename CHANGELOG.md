@@ -20,16 +20,32 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
   - Explicit hot: true in webpack-dev-server configuration
   - Improved developer experience with faster feedback loop
 
-- **ESLint and Prettier configuration:**
-  - ESLint flat config with TypeScript support
-  - eslint-plugin-react-hooks for React Hooks rules validation
-  - eslint-plugin-jsx-a11y for accessibility linting
-  - eslint-config-prettier for ESLint/Prettier integration
-  - Prettier configuration with best practices (trailing commas, arrow parens, LF line endings)
-  - .prettierignore file for excluding build artifacts and dependencies
-  - NPM scripts for code quality: prettier:check, prettier:write, format
-  - Automatic React version detection in ESLint
-  - Comprehensive linting for TypeScript, React, and accessibility
+- **ESLint 9 flat config migration:**
+  - Migrated to ESLint 9 with modern flat config format (eslint.config.mts)
+  - TypeScript ESLint integration with recommended rules
+  - React and React Hooks plugin configuration
+  - JSX accessibility rules (eslint-plugin-jsx-a11y)
+  - Automatic import sorting with eslint-plugin-simple-import-sort
+  - Import organization rules (import/first, import/newline-after-import, import/no-duplicates)
+  - TypeScript path resolution support for FSD layers (app/, pages/, widgets/, features/, entities/, shared/)
+  - ESLint config prettier integration to disable conflicting rules
+  - Automatic React version detection
+  - NPM scripts: eslint:check, eslint:fix for code linting
+  - Comprehensive linting for TypeScript, React, accessibility, and import organization
+
+- **Prettier configuration:**
+  - .prettierrc configuration file with project code style standards
+  - .prettierignore file for excluding build artifacts, dependencies, and generated files
+  - NPM scripts for code formatting: prettier:check, prettier:write, format
+  - Unified format script combining Prettier and ESLint auto-fixes
+
+- **EditorConfig:**
+  - .editorconfig file for consistent code formatting across different editors and IDEs
+  - Standardized indentation, line endings, charset, and whitespace rules
+
+- **Pull request template:**
+  - .github/pull_request_template.md for standardized PR descriptions
+  - Structured sections for summary, changes, testing, and checklist
 
 #### Internationalization (i18n)
 
@@ -125,11 +141,21 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 
 #### Dependencies
 
-- @pmmmwh/react-refresh-webpack-plugin for React Fast Refresh (dev dependency)
-- react-refresh for React Fast Refresh runtime (dev dependency)
-- eslint-config-prettier for disabling ESLint rules that conflict with Prettier (dev dependency)
+- @eslint/js for ESLint core JavaScript rules (dev dependency)
+- eslint 9.39.2 for code linting (dev dependency)
+- typescript-eslint for TypeScript ESLint integration (dev dependency)
+- eslint-plugin-react for React-specific linting rules (dev dependency)
 - eslint-plugin-react-hooks for React Hooks linting rules (dev dependency)
 - eslint-plugin-jsx-a11y for accessibility linting rules (dev dependency)
+- eslint-plugin-simple-import-sort for automatic import sorting (dev dependency)
+- eslint-plugin-import for import/export syntax validation (dev dependency)
+- eslint-import-resolver-typescript for TypeScript path resolution (dev dependency)
+- eslint-config-prettier for disabling ESLint rules that conflict with Prettier (dev dependency)
+- prettier 3.7.4 for code formatting (dev dependency)
+- globals for global variables configuration (dev dependency)
+- jiti for TypeScript config file execution (dev dependency)
+- @pmmmwh/react-refresh-webpack-plugin for React Fast Refresh (dev dependency)
+- react-refresh for React Fast Refresh runtime (dev dependency)
 - i18next for internationalization core functionality
 - react-i18next for React integration
 - i18next-browser-languagedetector for automatic language detection
@@ -144,6 +170,26 @@ Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [Semantic 
 - tw-animate-css for animations
 
 ### Changed
+
+- **TypeScript configuration enhancements:**
+  - Enabled strict type checking with `strict: true`
+  - Added compiler optimizations: `skipLibCheck`, `skipDefaultLibCheck`
+  - Enhanced module resolution with `resolvePackageJsonExports` and `resolvePackageJsonImports`
+  - Improved source map quality with `declarationMap`
+  - Updated ES library references and JSX configuration
+  - Better incremental build performance with `composite` and `tsBuildInfoFile`
+
+- **ESLint code quality improvements:**
+  - Refactored ESLint configuration with improved structure and organization
+  - Translated all configuration comments from Russian to English
+  - Added automatic import sorting and organization rules
+  - Configured TypeScript import resolver for better path resolution
+  - Enhanced React, accessibility, and import linting rules
+
+- **Codebase formatting:**
+  - Applied Prettier formatting across entire codebase
+  - Standardized code style in all TypeScript, React, and configuration files
+  - Improved consistency in import statements and file structure
 
 - **i18n architecture refactor:**
   - Move i18n configuration from `app/i18n/` to `app/providers/i18n/` following FSD architecture
