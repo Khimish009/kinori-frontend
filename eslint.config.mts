@@ -8,6 +8,7 @@ import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
+import i18next from 'eslint-plugin-i18next';
 
 import pluginImport from "eslint-plugin-import";
 import pluginSimpleImportSort from "eslint-plugin-simple-import-sort";
@@ -60,7 +61,7 @@ export default defineConfig(
     },
   },
 
-  // 3) React + JSX runtime (только для JSX/TSX)
+  // 3) React + JSX runtime (only for JSX/TSX)
   {
     name: "react",
     files: ["**/*.{jsx,tsx}"],
@@ -73,7 +74,7 @@ export default defineConfig(
     },
   },
 
-  // 4) React Hooks (у плагина исторически правила берут из recommended)
+  // 4) React Hooks (plugin historically uses rules from recommended)
   {
     name: "react-hooks",
     files: ["**/*.{jsx,tsx}"],
@@ -83,7 +84,7 @@ export default defineConfig(
     rules: pluginReactHooks.configs.recommended.rules,
   },
 
-  // 5) a11y (только для JSX/TSX)
+  // 5) a11y (only for JSX/TSX)
   {
     name: "a11y",
     files: ["**/*.{jsx,tsx}"],
@@ -130,7 +131,7 @@ export default defineConfig(
     },
   },
 
-  // 7) Конфиги/скрипты Node (vite/webpack/eslint config и т.п.)
+  // 7) Node configs/scripts (vite/webpack/eslint config, etc.)
   {
     name: "node-configs",
     files: ["**/*.{config,conf}.{js,mjs,cjs,ts}", "**/scripts/**/*.{js,ts}"],
@@ -141,7 +142,7 @@ export default defineConfig(
     },
   },
 
-  // 8) CJS — чтобы не спорить с sourceType
+  // 8) CJS — to avoid conflicts with sourceType
   {
     name: "commonjs",
     files: ["**/*.cjs", "**/*.cts"],
@@ -157,6 +158,17 @@ export default defineConfig(
     extends: [vitest.configs.recommended],
   },
 
-  // 10) Prettier LAST
+  // 10) i18next
+  {
+    name: "i18next",
+    plugins: {
+      i18next: i18next,
+    },
+    rules: {
+      "i18next/no-literal-string": "error",
+    },
+  },
+
+  // 11) Prettier LAST
   eslintConfigPrettier,
 );
