@@ -1,7 +1,8 @@
 import 'i18next';
+
+import aboutPage from 'public/locales/ru/aboutPage.json';
 import common from 'public/locales/ru/common.json';
 import mainPage from 'public/locales/ru/mainPage.json';
-import aboutPage from 'public/locales/ru/aboutPage.json';
 
 declare module 'i18next' {
   interface CustomTypeOptions {

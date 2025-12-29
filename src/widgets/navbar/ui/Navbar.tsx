@@ -1,10 +1,11 @@
+import { ROOT_PATH } from 'app/providers/router/config/constants';
 import { SignInButton, SignUpButton } from 'features/auth';
+import { LangSwitcher } from 'features/lang-switcher';
 import { ThemeSwitcher } from 'features/theme-switcher';
 import { Link, NavLink } from 'react-router-dom';
-import { navLinks } from '../config/navLinks';
-import { ROOT_PATH } from 'app/providers/router/config/constants';
 import { Logo } from 'shared/ui/logo';
-import { LangSwitcher } from 'features/lang-switcher';
+
+import { navLinks } from '../config/navLinks';
 
 export const Navbar = () => {
   const linkClasses = ({ isActive }: { isActive: boolean }) =>
@@ -15,18 +16,18 @@ export const Navbar = () => {
     }`;
 
   return (
-    <header className='flex justify-between items-center px-4 sticky top-0 z-50 bg-background'>
+    <header className="flex justify-between items-center px-4 sticky top-0 z-50 bg-background">
       <Link to={ROOT_PATH}>
         <Logo />
       </Link>
-      <nav className='flex gap-3' aria-label='Main navigation'>
+      <nav className="flex gap-3" aria-label="Main navigation">
         {navLinks.map(({ to, title }) => (
           <NavLink key={to} className={linkClasses} to={to} title={title}>
             {title}
           </NavLink>
         ))}
       </nav>
-      <div className='flex gap-2'>
+      <div className="flex gap-2">
         <ThemeSwitcher />
         <LangSwitcher />
         <SignInButton />

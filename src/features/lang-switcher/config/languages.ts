@@ -1,9 +1,9 @@
-import RU from 'country-flag-icons/react/3x2/RU';
-import GB from 'country-flag-icons/react/3x2/GB';
-import FR from 'country-flag-icons/react/3x2/FR';
-import ES from 'country-flag-icons/react/3x2/ES';
 import DE from 'country-flag-icons/react/3x2/DE';
+import ES from 'country-flag-icons/react/3x2/ES';
+import FR from 'country-flag-icons/react/3x2/FR';
+import GB from 'country-flag-icons/react/3x2/GB';
 import IT from 'country-flag-icons/react/3x2/IT';
+import RU from 'country-flag-icons/react/3x2/RU';
 
 export const languages = [
   {

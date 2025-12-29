@@ -1,4 +1,5 @@
 import path from 'path';
+
 import { buildWebpackConfig } from './config/buildWebpackConfig';
 import type { BuildEnv, BuildPaths } from './config/types/config';
 

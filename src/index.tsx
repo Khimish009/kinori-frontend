@@ -1,8 +1,9 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { App } from 'app/App';
 import 'app/providers/i18n/i18n';
 import './index.css';
+
+import { App } from 'app/App';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 
 const container = document.getElementById('root');
 

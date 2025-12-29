@@ -1,11 +1,11 @@
-import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 import { LoadingFallback } from 'shared/ui/loading-fallback';
 import { Navbar } from 'widgets/navbar';
 
 export const MainLayout = () => {
   return (
-    <div className='p-4'>
+    <div className="p-4">
       <Navbar />
       <main>
         <Suspense fallback={<LoadingFallback />}>

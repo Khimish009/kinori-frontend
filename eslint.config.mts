@@ -1,13 +1,15 @@
 import js from '@eslint/js';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import pluginImport from 'eslint-plugin-import';
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
-import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
-import eslintConfigPrettier from 'eslint-config-prettier';
+import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  // 1. Игнорируемые файлы (аналог .eslintignore)
+  // 1. Ignored files (similar to .eslintignore)
   {
     ignores: [
       '**/node_modules/**',
@@ -18,17 +20,17 @@ export default tseslint.config(
     ],
   },
 
-  // 2. Базовые правила JavaScript
+  // 2. Base JavaScript rules
   js.configs.recommended,
 
-  // 3. TypeScript правила
+  // 3. TypeScript rules
   ...tseslint.configs.recommended,
 
-  // 4. React правила
+  // 4. React rules
   pluginReact.configs.flat.recommended,
-  pluginReact.configs.flat['jsx-runtime'], // Для React 17+ (не нужен import React)
+  pluginReact.configs.flat['jsx-runtime'], // For React 17+ (no need for import React)
 
-  // 5. React Hooks правила
+  // 5. React Hooks rules
   {
     plugins: {
       'react-hooks': pluginReactHooks,
@@ -36,10 +38,10 @@ export default tseslint.config(
     rules: pluginReactHooks.configs.recommended.rules,
   },
 
-  // 6. Accessibility правила
+  // 6. Accessibility rules
   pluginJsxA11y.flatConfigs.recommended,
 
-  // 7. Настройки для всех файлов
+  // 7. Settings for all files
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     languageOptions: {
@@ -56,12 +58,46 @@ export default tseslint.config(
     },
     settings: {
       react: {
-        version: 'detect', // Автоматически определяет версию React
+        version: 'detect', // Automatically detects React version
+      },
+    },
+  },
+  {
+    plugins: {
+      import: pluginImport,
+      'simple-import-sort': pluginSimpleImportSort,
+    },
+    rules: {
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
+      'import/first': 'error',
+      'import/newline-after-import': 'error',
+      'import/no-duplicates': 'error',
+      'import/no-unresolved': [
+        'error',
+        {
+          ignore: [
+            '^app/',
+            '^pages/',
+            '^widgets/',
+            '^features/',
+            '^entities/',
+            '^shared/',
+          ],
+        },
+      ],
+    },
+    settings: {
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.json',
+        },
       },
     },
   },
 
-  // 8. ВАЖНО: Prettier должен быть ПОСЛЕДНИМ!
-  // Отключает все правила, которые конфликтуют с Prettier
+  // 8. IMPORTANT: Prettier must be LAST!
+  // Disables all rules that conflict with Prettier
   eslintConfigPrettier,
 );

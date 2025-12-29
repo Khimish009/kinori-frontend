@@ -1,5 +1,5 @@
 import { useTheme } from 'app/providers/theme';
-import { Sun, Moon } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { useMemo } from 'react';
 import { Button } from 'shared/ui/button';
 
@@ -18,10 +18,10 @@ export const ThemeSwitcher = () => {
       aria-label={themeSwitchLabel}
       title={themeSwitchLabel}
       onClick={toggleTheme}
-      variant='ghost'
-      size='icon'
+      variant="ghost"
+      size="icon"
     >
-      <Icon className='h-5 w-5 transition-opacity duration-200' />
+      <Icon className="h-5 w-5 transition-opacity duration-200" />
     </Button>
   );
 };

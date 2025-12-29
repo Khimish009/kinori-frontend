@@ -1,5 +1,3 @@
-import { ThemeContext } from '../model/ThemeContext';
-import type { ThemeProviderProps, Theme } from '../model/types';
 import {
   useCallback,
   useEffect,
@@ -7,13 +5,16 @@ import {
   useMemo,
   useState,
 } from 'react';
+
+import { DEFAULT_THEME, LOCAL_STORAGE_THEME_KEY } from '../config/constants';
 import {
   applyTheme,
   getInitialTheme,
   getOppositeTheme,
   isValidTheme,
 } from '../lib/utils';
-import { DEFAULT_THEME, LOCAL_STORAGE_THEME_KEY } from '../config/constants';
+import { ThemeContext } from '../model/ThemeContext';
+import type { Theme, ThemeProviderProps } from '../model/types';
 
 export const ThemeProvider = ({
   children,
