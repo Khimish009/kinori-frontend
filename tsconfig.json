@@ -39,10 +39,23 @@
     "tsBuildInfoFile": "./.tsbuildinfo", // Build info file location
 
     // === Development ===
-    "sourceMap": true // Generate source maps for debugging
+    "sourceMap": true, // Generate source maps for debugging
+
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": ["src/**/*", "config/**/*", "global.d.ts", "vitest.config.ts"],
-  "exclude": ["node_modules", "build", "dist", ".tsbuildinfo"],
+  "include": [
+      "src/**/*",
+      "config/**/*",
+      "global.d.ts",
+      "vitest.config.ts",
+      "vitest.setup.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build", 
+    "dist", 
+    ".tsbuildinfo"
+  ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
