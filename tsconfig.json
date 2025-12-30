@@ -41,7 +41,7 @@
     // === Development ===
     "sourceMap": true // Generate source maps for debugging
   },
-  "include": ["src/**/*", "config/**/*", "global.d.ts"],
+  "include": ["src/**/*", "config/**/*", "global.d.ts", "vitest.config.ts"],
   "exclude": ["node_modules", "build", "dist", ".tsbuildinfo"],
   "ts-node": {
     "compilerOptions": {
