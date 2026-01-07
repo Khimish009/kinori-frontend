@@ -1,38 +1,33 @@
 // eslint.config.mjs
-import { defineConfig } from "eslint/config";
-
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-
-import pluginReact from "eslint-plugin-react";
-import pluginReactHooks from "eslint-plugin-react-hooks";
-import pluginJsxA11y from "eslint-plugin-jsx-a11y";
+import js from '@eslint/js';
+import vitest from '@vitest/eslint-plugin';
+import { defineConfig } from 'eslint/config';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import i18next from 'eslint-plugin-i18next';
-
-import pluginImport from "eslint-plugin-import";
-import pluginSimpleImportSort from "eslint-plugin-simple-import-sort";
-
-import vitest from "@vitest/eslint-plugin";
-
-import eslintConfigPrettier from "eslint-config-prettier/flat";
+import pluginImport from 'eslint-plugin-import';
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import pluginReact from 'eslint-plugin-react';
+import pluginReactHooks from 'eslint-plugin-react-hooks';
+import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default defineConfig(
   // 0) Global ignores
   {
     ignores: [
-      "**/node_modules/**",
-      "**/build/**",
-      "**/dist/**",
-      "**/.webpack/**",
-      "**/coverage/**",
+      '**/node_modules/**',
+      '**/build/**',
+      '**/dist/**',
+      '**/.webpack/**',
+      '**/coverage/**',
     ],
   },
 
   // 1) Base for all source files
   {
-    name: "base",
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    name: 'base',
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     extends: [js.configs.recommended],
     languageOptions: {
       globals: {
@@ -47,8 +42,8 @@ export default defineConfig(
 
   // 2) TypeScript
   {
-    name: "ts-typechecked",
-    files: ["**/*.{ts,mts,cts,tsx}"],
+    name: 'ts-typechecked',
+    files: ['**/*.{ts,mts,cts,tsx}'],
     extends: [
       tseslint.configs.recommendedTypeChecked,
       tseslint.configs.stylisticTypeChecked,
@@ -63,69 +58,69 @@ export default defineConfig(
 
   // 3) React + JSX runtime (only for JSX/TSX)
   {
-    name: "react",
-    files: ["**/*.{jsx,tsx}"],
+    name: 'react',
+    files: ['**/*.{jsx,tsx}'],
     extends: [
       pluginReact.configs.flat.recommended,
-      pluginReact.configs.flat["jsx-runtime"],
+      pluginReact.configs.flat['jsx-runtime'],
     ],
     settings: {
-      react: { version: "detect" },
+      react: { version: 'detect' },
     },
   },
 
   // 4) React Hooks (plugin historically uses rules from recommended)
   {
-    name: "react-hooks",
-    files: ["**/*.{jsx,tsx}"],
+    name: 'react-hooks',
+    files: ['**/*.{jsx,tsx}'],
     plugins: {
-      "react-hooks": pluginReactHooks,
+      'react-hooks': pluginReactHooks,
     },
     rules: pluginReactHooks.configs.recommended.rules,
   },
 
   // 5) a11y (only for JSX/TSX)
   {
-    name: "a11y",
-    files: ["**/*.{jsx,tsx}"],
+    name: 'a11y',
+    files: ['**/*.{jsx,tsx}'],
     extends: [pluginJsxA11y.flatConfigs.recommended],
   },
 
   // 6) Import/sort rules
   {
-    name: "imports",
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    name: 'imports',
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     plugins: {
       import: pluginImport,
-      "simple-import-sort": pluginSimpleImportSort,
+      'simple-import-sort': pluginSimpleImportSort,
     },
     rules: {
-      "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
 
-      "import/first": "error",
-      "import/newline-after-import": "error",
-      "import/no-duplicates": "error",
+      'import/first': 'error',
+      'import/newline-after-import': 'error',
+      'import/no-duplicates': 'error',
 
-      "import/no-unresolved": [
-        "error",
+      'import/no-unresolved': [
+        'error',
         {
           ignore: [
-            "^app/",
-            "^pages/",
-            "^widgets/",
-            "^features/",
-            "^entities/",
-            "^shared/",
+            '^app/',
+            '^pages/',
+            '^widgets/',
+            '^features/',
+            '^entities/',
+            '^shared/',
           ],
         },
       ],
     },
     settings: {
-      "import/resolver": {
+      'import/resolver': {
         typescript: {
           alwaysTryTypes: true,
-          project: "./tsconfig.json",
+          project: './tsconfig.json',
         },
       },
     },
@@ -133,8 +128,8 @@ export default defineConfig(
 
   // 7) Node configs/scripts (vite/webpack/eslint config, etc.)
   {
-    name: "node-configs",
-    files: ["**/*.{config,conf}.{js,mjs,cjs,ts}", "**/scripts/**/*.{js,ts}"],
+    name: 'node-configs',
+    files: ['**/*.{config,conf}.{js,mjs,cjs,ts}', '**/scripts/**/*.{js,ts}'],
     languageOptions: {
       globals: {
         ...globals.node,
@@ -144,28 +139,31 @@ export default defineConfig(
 
   // 8) CJS — to avoid conflicts with sourceType
   {
-    name: "commonjs",
-    files: ["**/*.cjs", "**/*.cts"],
+    name: 'commonjs',
+    files: ['**/*.cjs', '**/*.cts'],
     languageOptions: {
-      sourceType: "script",
+      sourceType: 'script',
     },
   },
 
   // 9) Vitest tests
   {
-    name: "tests",
-    files: ["**/*.{test,spec}.{js,jsx,ts,tsx}", "**/tests/**/*.{js,jsx,ts,tsx}"],
+    name: 'tests',
+    files: [
+      '**/*.{test,spec}.{js,jsx,ts,tsx}',
+      '**/tests/**/*.{js,jsx,ts,tsx}',
+    ],
     extends: [vitest.configs.recommended],
   },
 
   // 10) i18next
   {
-    name: "i18next",
+    name: 'i18next',
     plugins: {
       i18next: i18next,
     },
     rules: {
-      "i18next/no-literal-string": "error",
+      'i18next/no-literal-string': 'error',
     },
   },
 

@@ -44,18 +44,17 @@
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
   "include": [
-      "src/**/*",
-      "config/**/*",
-      "global.d.ts",
-      "vitest.config.ts",
-      "vitest.setup.ts"
+    "src/**/*",
+    "config/**/*",
+    "global.d.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts",
+    "eslint.config.mts",
+    "i18next-parser.config.ts",
+    "postcss.config.ts",
+    "webpack.config.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "build", 
-    "dist", 
-    ".tsbuildinfo"
-  ],
+  "exclude": ["node_modules", "build", "dist", ".tsbuildinfo"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

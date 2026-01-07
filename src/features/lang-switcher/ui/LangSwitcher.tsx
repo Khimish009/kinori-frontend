@@ -16,7 +16,7 @@ export const LangSwitcher = () => {
 
   const handleLanguageChange = useCallback(
     (locale: string) => {
-      i18n.changeLanguage(locale);
+      void i18n.changeLanguage(locale);
     },
     [i18n],
   );
